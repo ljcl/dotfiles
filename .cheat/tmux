@@ -1,0 +1,55 @@
+# ¶ denotes prefix C-a (or C-b)
+
+# Restore or create session:
+tmux new-session -A -s session_name
+
+# Detach from tmux:
+¶ d
+
+# Detach an already attached session (great if you are moving devices with different screen resolutions)
+tmux attach -d
+
+# Help screen (Q to quit):
+¶ ?
+
+# Reload configuation file
+¶ :source-file ~/.tmux.conf
+
+# Copy Mode
+# =================
+
+¶ v
+
+# Window management
+# =================
+
+# Create window [Prompt for name]:
+¶ [S-]c
+
+# List windows:
+¶ w
+
+# Destroy window:
+¶ &
+
+# Switch between windows:
+¶ [0-9]
+¶ C-Left; ¶ C-h
+¶ C-Right; ¶ C-l
+
+# Swap Windows
+C-S-Left
+C-S-Right
+
+# Swap current window with 1st
+¶ T
+
+# Destroy pane:
+¶ x
+
+# Resize panes
+¶ S-Left, ¶ H
+¶ S-Down, ¶ J
+¶ S-Up, ¶ K
+¶ S-Right, ¶ L
+
