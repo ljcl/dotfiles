@@ -94,3 +94,9 @@ if has("autocmd")
   " Treat .md files as Markdown
   autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 endif
+
+call plug#begin('~/.vim/plugged')
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'mileszs/ack.vim'
+call plug#end()
