@@ -1,0 +1,55 @@
+# To edit previous commit message
+git commit --amend
+
+# To removed staged and working directory changes
+git reset --hard
+
+# To go 2 commits back
+git reset --hard HEAD~2
+
+# To remove untracked files
+git clean -f -d
+
+# To remove untracked and ignored files
+git clean -f -d -x
+
+# To delete the branch "branch_name" (-D for remote)
+git branch -d branch_name
+
+# To make an exisiting branch track a remote branch
+git branch -u upstream/foo
+
+# To see who commited which line in a file
+git blame filename
+
+# View changes that are new on a feature branch
+git log -p feature --not master
+git diff master...feature
+
+# Interactive rebase for the last 7 commits
+git rebase -i @~7
+
+# Diff files WITHOUT considering them a part of git
+# This can be used to diff files that are not in a git repo!
+git diff --no-index path/to/file/A path/to/file/B
+
+# To pull changes while overwriting any local commits
+git fetch --all
+git reset --hard origin/master
+
+# Update all your submodules
+git submodule update --init --recursive
+
+# Remove all stale branches (ones that have been deleted on remote)
+# So if you have a lot of useless branches, delete them on Github and then run this
+git remote prune origin
+
+# The following can be used to prune all remotes at once
+git remote prune $(git remote | tr '\n' ' ')
+
+# Revisions can also be identified with :/text
+# So, this will show the first commit that has "cool" in their message body
+git show :/cool
+
+# Undo parts of last commit in a specific file
+git checkout -p HEAD^ -- /path/to/file
