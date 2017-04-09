@@ -56,6 +56,8 @@ brew install woff2
 brew install ruby-install
 brew install chruby
 
+ruby-install ruby 2.4.1
+
 # Install other useful binaries.
 brew install ack
 brew install dark-mode

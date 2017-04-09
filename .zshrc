@@ -63,6 +63,8 @@ fi
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 
+chruby ruby-2.4.1
+
 # Alt to navigate word in iTerm
 bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
