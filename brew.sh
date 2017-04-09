@@ -38,6 +38,8 @@ brew install zsh
 
 brew install httpie
 
+brew install go
+
 # Install more recent versions of some macOS tools.
 brew install vim --with-override-system-vi
 brew install homebrew/dupes/grep

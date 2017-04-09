@@ -134,3 +134,6 @@ alias reload="exec $SHELL -l"
 
 # Fix misbehaving TMUX
 alias takeover="tmux detach -a"
+
+# GOPATH
+export GOPATH=$HOME/go
