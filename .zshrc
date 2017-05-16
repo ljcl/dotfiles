@@ -31,7 +31,7 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/command-not-found
   # zgen oh-my-zsh plugins/aws
   zgen oh-my-zsh plugins/brew
-  zgen oh-my-zsh plugins/brew-cask
+  # zgen oh-my-zsh plugins/brew-cask
   # zgen oh-my-zsh plugins/frontend-search
   zgen oh-my-zsh plugins/httpie
   zgen oh-my-zsh plugins/nvm
@@ -39,6 +39,7 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/tmux
 
   # Non oh-my-zsh plugins
+  zgen load bobthecow/git-flow-completion
   zgen load kennethreitz/autoenv
   zgen load djui/alias-tips
   zgen load zsh-users/zsh-completions src
