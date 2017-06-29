@@ -11,6 +11,9 @@ export EDITOR="/usr/local/bin/vim"
 # PHP7 CLI
 export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
 
+# Exports
+export CHEATCOLORS=true
+
 # if the init scipt doesn't exist
 if ! zgen saved; then
 

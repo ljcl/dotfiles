@@ -38,10 +38,10 @@ git diff master...feature
 # Find commits containing recommendations by source code [Custom]
 git fc recommendations
 
-# Find commits containing recommendations by commit message
+# Find commits containing recommendations by commit message [Custom]
 git fm recommendations
 
-# Find branches (or tags) containing commit
+# Find branches (or tags) containing commit [Custom]
 git fb c16ad5
 git ft c16ad5
 
@@ -63,7 +63,7 @@ git submodule update --init --recursive
 # So if you have a lot of useless branches, delete them on Github and then run this
 git remote prune origin
 
-# Remove branches that have already been merged with master
+# Remove branches that have already been merged with master [Custom]
 git dm
 
 # The following can be used to prune all remotes at once
