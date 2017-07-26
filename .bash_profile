@@ -55,11 +55,8 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 # -----------------------------------
 
-# Ruby Version Handling
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
-
-chruby ruby-2.4.1
+# Chruby
+source "$HOME/.chruby";
 
 #PHP CLI
 export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
