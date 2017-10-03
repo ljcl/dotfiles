@@ -141,3 +141,5 @@ export GOPATH=$HOME/go
 # Chrome Shortcuts for remote debugging
 alias canary="/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --remote-debugging-port=9222"
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222"
+alias nightly="/Applications/FirefoxNightly.app/Contents/MacOS/firefox -start-debugging-server -no-remote"
+alias firefox="/Applications/Firefox.app/Contents/MacOS/firefox -start-debugging-server -no-remote"
