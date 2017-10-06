@@ -1,34 +1,3 @@
-spaces = require("hs._asm.undocumented.spaces")
-
--- A global variable for the Hyper Mode
-k = hs.hotkey.modal.new({}, "F17")
-
-hyperBindings = {'a', 'd','SPACE'}
-
-for i,key in ipairs(hyperBindings) do
-  k:bind({}, key, nil, function() hs.eventtap.keyStroke({'cmd','alt','shift','ctrl'}, key)
-    k.triggered = true
-  end)
-end
-
--- Enter Hyper Mode when F18 (Hyper/Capslock) is pressed
-pressedF18 = function()
-  k.triggered = false
-  k:enter()
-end
-
--- Leave Hyper Mode when F18 (Hyper/Capslock) is pressed,
---   send ESCAPE if no other keys are pressed.
-releasedF18 = function()
-  k:exit()
-  if not k.triggered then
-    hs.eventtap.keyStroke({}, 'ESCAPE')
-  end
-end
-
--- Bind the Hyper key
-f18 = hs.hotkey.bind({}, 'F18', pressedF18, releasedF18)
-
 -- DISPLAY FOCUS SWITCHING --
 
 --One hotkey should just suffice for dual-display setups as it will naturally
@@ -42,7 +11,7 @@ hs.hotkey.bind({"alt"}, "`", function ()
 end)
 
 --Bring focus to previous display/screen
-hs.hotkey.bind({"alt", "shift"}, "`", function() 
+hs.hotkey.bind({"alt", "shift"}, "`", function()
   focusScreen(hs.window.focusedWindow():screen():previous())
 end)
 
@@ -71,9 +40,3 @@ function focusScreen(screen)
 end
 
 -- END DISPLAY FOCUS SWITCHING --
-
-
--- Spaces
-local spacesModifier = "ctrl"
-local spacesCount = spaces.count()
-local spacesModifiers = {"fn", spacesModifier}
