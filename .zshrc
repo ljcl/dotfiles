@@ -23,22 +23,12 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/npm
   zgen oh-my-zsh plugins/history
   zgen oh-my-zsh plugins/colored-man-pages
-  # zgen oh-my-zsh plugins/pip
   zgen oh-my-zsh plugins/git-flow
-  zgen oh-my-zsh plugins/rsync
-  # zgen oh-my-zsh plugins/bundler
-  # zgen oh-my-zsh plugins/rake
   zgen oh-my-zsh plugins/git-extras
-  # zgen oh-my-zsh plugins/heroku
   zgen oh-my-zsh plugins/sublime
   zgen oh-my-zsh plugins/command-not-found
-  # zgen oh-my-zsh plugins/aws
   zgen oh-my-zsh plugins/brew
-  # zgen oh-my-zsh plugins/brew-cask
-  # zgen oh-my-zsh plugins/frontend-search
   zgen oh-my-zsh plugins/httpie
-  zgen oh-my-zsh plugins/nvm
-  # zgen oh-my-zsh plugins/osx
   zgen oh-my-zsh plugins/tmux
 
   # Non oh-my-zsh plugins
@@ -46,6 +36,7 @@ if ! zgen saved; then
   zgen load kennethreitz/autoenv
   zgen load djui/alias-tips
   zgen load zsh-users/zsh-completions src
+  zgen load lukechilds/zsh-nvm
 
   # Pure Theme
   zgen load mafredri/zsh-async
@@ -84,9 +75,8 @@ source $HOME/.chruby
 source $HOME/.aliases
 
 # iTerm Intergration
-source $HOME/.iterm2_shell_integration.zsh
+# source $HOME/.iterm2_shell_integration.zsh
 
 # NVM Intergration
-export NVM_DIR="${HOME}/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
+# export NVM_DIR="${HOME}/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
