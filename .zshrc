@@ -33,7 +33,7 @@ if ! zgen saved; then
 
   # Non oh-my-zsh plugins
   zgen load bobthecow/git-flow-completion
-  zgen load kennethreitz/autoenv
+  # zgen load kennethreitz/autoenv # Causing me trouble with react apps
   zgen load djui/alias-tips
   zgen load zsh-users/zsh-completions src
   zgen load lukechilds/zsh-nvm
