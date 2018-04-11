@@ -8,6 +8,8 @@ function setFrame(x, y, width, height, window = Window.focused()) {
   const screen = window.screen(),
     frame = screen.flippedVisibleFrame();
 
+  log(Screen.main().frame());
+
   window.setFrame({
     x: frame.x + frame.width * x,
     y: frame.y + frame.height * y,
