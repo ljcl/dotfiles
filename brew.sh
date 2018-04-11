@@ -44,7 +44,7 @@ brew install go
 brew install vim --with-override-system-vi
 brew install homebrew/dupes/grep
 brew install homebrew/dupes/openssh
-brew install homebrew/php/php70
+brew install php@7.0
 
 # Install font tools.
 brew tap bramstein/webfonttools
