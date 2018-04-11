@@ -26,7 +26,7 @@ function readList(callback = _.noop) {
 function writeList(callback = _.noop) {
   if (!spacesList) return;
 
-  const str = JSON.stringify(spacesList, undefined, JSON_INDENTATION) || '{}',
+  const str = JSON.stringify(spacesList, undefined, 2) || '{}',
     content = str.replace("'", "\\'");
 
   writeFile('~/.config/phoenix/spaces/list.json', content, callback);
@@ -129,8 +129,9 @@ function guessSpaceName(space, index) {
   if (vscode) {
     const title = vscode.title();
 
-    return _.last(title.split(' — '));
+    return 'Code - ' + _.last(title.split(' — '));
   }
+  if (index === 0) return 'Home';
 
   return index ? `Space ${index + 1}` : 'Home';
 }

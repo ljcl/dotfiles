@@ -20,22 +20,16 @@ require('./helpers/set_handler.js');
 require('./helpers/set_handlers.js');
 require('./helpers/write_file.js');
 
-require('./helpers/set_window.js');
+require('./helpers/set_screen.js');
 
 require('./shortcuts/center.js');
 require('./shortcuts/corners.js');
 require('./shortcuts/expand.js');
-require('./shortcuts/fullscreen.js');
-require('./shortcuts/halves.js');
-require('./shortcuts/info.js');
-require('./shortcuts/sides.js');
-require('./shortcuts/thirds.js');
-require('./shortcuts/windows.js');
+require('./shortcuts/togglePosition.js');
+require('./shortcuts/screens.js');
 
 require('./spaces/alfred.js');
 require('./spaces/list.js');
 require('./spaces/overlay.js');
 
 alert('Loaded', App.get('Phoenix').icon());
-
-// alert('woo');

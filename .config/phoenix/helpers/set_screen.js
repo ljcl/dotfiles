@@ -1,4 +1,4 @@
-function setWindow(rect, screen) {
+function setScreen(rect, screen) {
   screen = screen || Window.focused().screen();
   const scr = screen.flippedVisibleFrame();
   var r = {
@@ -12,7 +12,7 @@ function setWindow(rect, screen) {
   const after = Window.focused().frame();
 
   if (isRectEqual(before, after)) {
-    setWindow(rect, screen.next());
+    setScreen(rect, screen.next());
   }
 }
 
