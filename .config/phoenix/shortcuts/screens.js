@@ -1,5 +1,5 @@
 /* GROW */
 
-setHandler('z', HYPER_SHIFT, () => {
+setHandler('x', HYPER_SHIFT, () => {
   setScreen({ x: 0, y: 0, width: 0.5, height: 1.0 });
 });

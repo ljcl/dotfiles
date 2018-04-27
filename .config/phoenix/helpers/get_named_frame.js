@@ -34,6 +34,10 @@ function getNamedFrame(name) {
       return [1 / 3, 0, 1 / 3, 1];
     case 'third-3':
       return [2 / 3, 0, 1 / 3, 1];
+    case 'twothird-1':
+      return [0 / 3, 0, 2 / 3, 1];
+    case 'twothird-2':
+      return [1 / 3, 0, 2 / 3, 1];
     /* DEFAULT */
     default:
       throw new Error(`Undefined frame named: "${name}"`);

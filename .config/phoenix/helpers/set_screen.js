@@ -1,3 +1,4 @@
+// FIXME: This sucks... fix.
 function setScreen(rect, screen) {
   screen = screen || Window.focused().screen();
   const scr = screen.flippedVisibleFrame();
