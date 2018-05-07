@@ -1,5 +1,3 @@
-/* CORNERS */
-
 const corners = [
   ['q', HYPER, ['top-left']],
   ['w', HYPER, ['top-right']],

@@ -1,5 +1,3 @@
-/* EXPAND */
-
 const expansionCache = {};
 
 setHandler('e', HYPER, () => {
@@ -12,18 +10,15 @@ setHandler('e', HYPER, () => {
     hash = window.hash(),
     currFrame = window.frame(),
     prevFrame = expansionCache[hash],
-    expanding =
-      !prevFrame ||
-      currFrame.width < sFrame.width ||
-      currFrame.height + 6 < sFrame.height, //FIXME: The setted height might be lower than the actual available height
-    nextFrame = expanding
-      ? {
-          x: 0,
-          y: 0,
-          width: 1000000,
-          height: 1000000
-        }
-      : prevFrame;
+    expanding = !prevFrame ||
+    currFrame.width < sFrame.width ||
+    currFrame.height + 6 < sFrame.height,
+    nextFrame = expanding ? {
+      x: 0,
+      y: 0,
+      width: sFrame.width,
+      height: sFrame.height
+    } : prevFrame;
 
   if (expanding) {
     expansionCache[hash] = currFrame;
@@ -33,8 +28,6 @@ setHandler('e', HYPER, () => {
 
   window.setFrame(nextFrame);
 });
-
-/* FULLSCREEN */
 
 setHandler('e', HYPER_SHIFT, () => {
   const window = Window.focused();

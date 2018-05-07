@@ -3,10 +3,8 @@ let currentFrame = 0;
 
 setHandler('z', HYPER, () => {
   togglePosition(
-    currentFrame,
-    ['half-1', 'half-2', 'third-1', 'third-2', 'third-3'],
+    currentFrame, ['half-1', 'half-2', 'third-1', 'third-2', 'third-3'],
     (err, newFrame) => {
-      log(newFrame);
       currentFrame = newFrame;
     }
   );
@@ -14,10 +12,8 @@ setHandler('z', HYPER, () => {
 
 setHandler('z', HYPER_SHIFT, () => {
   togglePosition(
-    currentFrameShift,
-    ['twothird-1', 'twothird-2'],
+    currentFrameShift, ['twothird-1', 'twothird-2'],
     (err, newFrame) => {
-      log(newFrame);
       currentFrameShift = newFrame;
     }
   );

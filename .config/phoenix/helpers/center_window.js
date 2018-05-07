@@ -1,15 +1,19 @@
+const RESIZE_MODIFIER = 0.78;
+
 function center_window(window = Window.focused(), resize = false) {
   if (!window) return;
   const screen = window.screen();
   const sFrame = screen.frame();
   let wFrame = window.frame();
 
+  let currScreen = Screen.main().flippedVisibleFrame();
+
   if (resize) {
     window.setFrame({
       x: wFrame.x,
       y: wFrame.y,
-      width: CENTER_WIDTH,
-      height: CENTER_HEIGHT
+      width: currScreen.width * RESIZE_MODIFIER,
+      height: currScreen.height * RESIZE_MODIFIER
     });
     wFrame = window.frame();
   }

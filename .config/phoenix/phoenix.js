@@ -1,10 +1,11 @@
 Phoenix.set({
-  // daemon: true,
+  daemon: true,
   openAtLogin: true
 });
 
 require('./config.js');
 
+require('./helpers/frameRatio.js');
 require('./helpers/alert.js');
 require('./helpers/center_window.js');
 require('./helpers/find_window.js');
