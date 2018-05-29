@@ -8,9 +8,6 @@ source "${HOME}/.zgen/zgen.zsh"
 # vim
 export EDITOR="/usr/local/bin/vim"
 
-# PHP7 CLI
-export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
-
 # Exports
 export CHEATCOLORS=true
 
@@ -80,3 +77,5 @@ source $HOME/.aliases
 # NVM Intergration
 # export NVM_DIR="${HOME}/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+export NODE_PATH="${NVM_BIN}/node"
