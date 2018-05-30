@@ -56,7 +56,7 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
 # Chruby
-chruby ruby-2.4.1
+#chruby ruby-2.4.1
 
 # Aliases
 source $HOME/.aliases
