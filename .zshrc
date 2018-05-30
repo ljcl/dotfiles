@@ -8,9 +8,6 @@ source "${HOME}/.zgen/zgen.zsh"
 # vim
 export EDITOR="/usr/local/bin/vim"
 
-# Exports
-export CHEATCOLORS=true
-
 # if the init scipt doesn't exist
 if ! zgen saved; then
 
@@ -20,20 +17,13 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/npm
   zgen oh-my-zsh plugins/history
   zgen oh-my-zsh plugins/colored-man-pages
-  zgen oh-my-zsh plugins/git-flow
   zgen oh-my-zsh plugins/git-extras
   zgen oh-my-zsh plugins/sublime
-  zgen oh-my-zsh plugins/command-not-found
-  zgen oh-my-zsh plugins/brew
-  zgen oh-my-zsh plugins/httpie
   zgen oh-my-zsh plugins/tmux
+  zgen oh-my-zsh plugins/chruby
 
   # Non oh-my-zsh plugins
-  zgen load bobthecow/git-flow-completion
-  # zgen load kennethreitz/autoenv # Causing me trouble with react apps
-  zgen load djui/alias-tips
   zgen load zsh-users/zsh-completions src
-  zgen load lukechilds/zsh-nvm
 
   # Pure Theme
   zgen load mafredri/zsh-async
@@ -66,16 +56,24 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
 # Chruby
-source $HOME/.chruby
+chruby ruby-2.4.1
 
 # Aliases
 source $HOME/.aliases
 
-# iTerm Intergration
-# source $HOME/.iterm2_shell_integration.zsh
-
-# NVM Intergration
-# export NVM_DIR="${HOME}/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-
-export NODE_PATH="${NVM_BIN}/node"
+# Defer initialization of nvm until nvm, node or a node-dependent command is
+# run. Ensure this block is only run once if .bashrc gets sourced multiple times
+# by checking whether __init_nvm is a function.
+if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(whence -w __init_nvm)" = function ]; then
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+  declare -a __node_commands=('nvm' 'node' 'npm' 'yarn' 'gulp' 'grunt' 'webpack')
+  function __init_nvm() {
+    for i in "${__node_commands[@]}"; do unalias $i; done
+    . "$NVM_DIR"/nvm.sh
+    export NODE_PATH="${NVM_BIN}/node"
+    unset __node_commands
+    unset -f __init_nvm
+  }
+  for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
+fi
