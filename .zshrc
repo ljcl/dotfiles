@@ -1,12 +1,10 @@
-# Homebrew
-export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
+for file in ~/.{path,exports,functions,aliases,extra}; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
 
 # Zgen
 source "${HOME}/.zgen/zgen.zsh"
-
-# vim
-export EDITOR="/usr/local/bin/vim"
 
 # if the init scipt doesn't exist
 if ! zgen saved; then
@@ -57,9 +55,6 @@ bindkey -M vicmd 'j' history-substring-search-down
 
 # Chruby
 #chruby ruby-2.4.1
-
-# Aliases
-source $HOME/.aliases
 
 # Defer initialization of nvm until nvm, node or a node-dependent command is
 # run. Ensure this block is only run once if .bashrc gets sourced multiple times

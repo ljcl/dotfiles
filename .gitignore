@@ -25,6 +25,9 @@
 ######################
 *.log
 
+# The extra file shouldn't be commited
+.extra
+
 #
 node_modules/
 bower_components/
