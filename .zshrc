@@ -6,6 +6,8 @@ unset file;
 # Zgen
 source "${HOME}/.zgen/zgen.zsh"
 
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+
 # if the init scipt doesn't exist
 if ! zgen saved; then
 
@@ -35,6 +37,9 @@ if ! zgen saved; then
   # generate the init script from plugins above
   zgen save
 fi
+
+# Fix Slow AF paste on zsh:
+# https://apple.stackexchange.com/posts/315515/revisions
 
 # Vi Mode
 # set -o vi
