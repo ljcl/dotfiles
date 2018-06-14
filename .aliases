@@ -16,7 +16,7 @@ alias g="git"
 alias h="history"
 alias j="jobs"
 
-colorflag="-G"
+colorflag="--color=auto"
 export LSCOLORS='BxBxhxDxfxhxhxhxhxcxcx'
 
 # List all files colorized in long format
