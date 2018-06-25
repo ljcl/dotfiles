@@ -1,7 +1,7 @@
 # Install native apps
 
 brew install caskroom/cask/brew-cask
-brew tap caskroom/versions
+brew tap homebrew/cask-versions
 
 brew cask install 1password
 brew cask install visual-studio-code-insiders
