@@ -38,6 +38,7 @@ brew install httpie
 brew install vim --with-override-system-vi
 brew install grep --with-default-names
 brew install openssh
+brew install reattach-to-user-namespace
 
 # Ruby
 brew install ruby-install
