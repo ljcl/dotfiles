@@ -36,6 +36,11 @@ brew install httpie
 
 # Install more recent versions of some macOS tools.
 brew install vim --with-override-system-vi
+mkdir -p ~/.vim/backups
+mkdir -p ~/.vim/swaps
+mkdir -p ~/.vim/undo
+mkdir -p ~/.vim/autoload
+
 brew install grep --with-default-names
 brew install openssh
 brew install reattach-to-user-namespace
