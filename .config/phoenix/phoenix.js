@@ -29,8 +29,8 @@ require('./shortcuts/expand.js');
 require('./shortcuts/togglePosition.js');
 require('./shortcuts/screens.js');
 
-require('./spaces/alfred.js');
-require('./spaces/list.js');
-require('./spaces/overlay.js');
+// require('./spaces/alfred.js');
+// require('./spaces/list.js');
+// require('./spaces/overlay.js');
 
 alert('Loaded', App.get('Phoenix').icon());

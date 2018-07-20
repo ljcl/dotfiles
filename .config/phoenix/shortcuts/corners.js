@@ -1,8 +1,8 @@
 const corners = [
-  ['q', HYPER, ['top-left']],
-  ['w', HYPER, ['top-right']],
-  ['s', HYPER, ['bottom-right']],
-  ['a', HYPER, ['bottom-left']]
+  ['[', HYPER, ['top-left']],
+  [']', HYPER, ['top-right']],
+  [';', HYPER, ['bottom-right']],
+  ['\'', HYPER, ['bottom-left']]
 ];
 
 setHandlers(setFrame, corners);
