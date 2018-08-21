@@ -6,12 +6,11 @@ Phoenix.set({
 require('./config.js');
 
 require('./helpers/frameRatio.js');
+require('./helpers/log.js');
 require('./helpers/alert.js');
-require('./helpers/center_window.js');
 require('./helpers/find_window.js');
 require('./helpers/focus_window.js');
 require('./helpers/get_named_frame.js');
-require('./helpers/log.js');
 require('./helpers/osascript.js');
 require('./helpers/read_file.js');
 require('./helpers/set_event_handler.js');
@@ -21,6 +20,7 @@ require('./helpers/set_handler.js');
 require('./helpers/set_handlers.js');
 require('./helpers/write_file.js');
 
+require('./helpers/center_window.js');
 require('./helpers/set_screen.js');
 
 require('./shortcuts/center.js');

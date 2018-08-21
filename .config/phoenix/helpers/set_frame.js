@@ -31,5 +31,7 @@ function setFrame(
     };
   }
 
+  log(dimensions)
+
   window.setFrame(dimensions);
 }

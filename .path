@@ -1,4 +1,7 @@
-PATH=$HOME/bin:$PATH;
+PATH=$HOME/bin:$PATH
 PATH=/usr/local/bin:$PATH
 PATH=/usr/local/sbin:$PATH
 PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+GOROOT=$HOME/go
+PATH=$PATH:$GOROOT/bin
+
