@@ -14,16 +14,15 @@ if ! zgen saved; then
   # Oh My Zsh
   zgen oh-my-zsh
   zgen oh-my-zsh plugins/git
-  zgen oh-my-zsh plugins/npm
   zgen oh-my-zsh plugins/history
   zgen oh-my-zsh plugins/colored-man-pages
   zgen oh-my-zsh plugins/git-extras
-  zgen oh-my-zsh plugins/sublime
   zgen oh-my-zsh plugins/tmux
-  zgen oh-my-zsh plugins/chruby
+  zgen oh-my-zsh plugins/rust
 
   # Non oh-my-zsh plugins
   zgen load zsh-users/zsh-completions src
+  zgen load lukechilds/zsh-nvm
 
   # Pure Theme
   zgen load mafredri/zsh-async
@@ -42,7 +41,7 @@ fi
 # https://apple.stackexchange.com/posts/315515/revisions
 
 # Vi Mode
-# set -o vi
+set -o vi
 
 # Alt to navigate word in iTerm
 bindkey "^[[1;3C" forward-word
@@ -57,6 +56,3 @@ bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
-
-export NVM_DIR=~/.nvm
-. $(brew --prefix nvm)/nvm.sh

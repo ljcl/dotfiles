@@ -44,5 +44,5 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 # source /usr/local/share/chruby/auto.sh
 # chruby ruby-2.4.1
 
-export NVM_DIR=~/.nvm
-. $(brew --prefix nvm)/nvm.sh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"

@@ -4,4 +4,4 @@ PATH=/usr/local/sbin:$PATH
 PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 GOROOT=$HOME/go
 PATH=$PATH:$GOROOT/bin
-
+PATH="$HOME/.cargo/bin:$PATH"
