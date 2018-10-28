@@ -68,15 +68,6 @@ function gz() {
   printf "gzip: %d bytes (%2.2f%%)\n" "$gzipsize" "$ratio";
 }
 
-# Syntax-highlight JSON strings or files
-# Usage: `json '{"foo":42}'` or `echo '{"foo":42}' | json`
-function json() {
-  if [ -t 0 ]; then # argument
-    python -mjson.tool <<< "$*" | pygmentize -l javascript;
-  else # pipe
-    python -mjson.tool | pygmentize -l javascript;
-  fi;
-}
 
 # Show all the names (CNs and SANs) listed in the SSL certificate
 # for a given domain
@@ -110,6 +101,27 @@ function getcertnames() {
     echo "ERROR: Certificate not found.";
     return 1;
   fi;
+}
+
+# Normalize `open` across Linux, macOS, and Windows.
+# This is needed to make the `o` function (see below) cross-platform.
+if [ ! $(uname -s) = 'Darwin' ]; then
+	if grep -q Microsoft /proc/version; then
+		# Ubuntu on Windows using the Linux subsystem
+		alias open='explorer.exe';
+	else
+		alias open='xdg-open';
+	fi
+fi
+
+# `o` with no arguments opens the current directory, otherwise opens the given
+# location
+function o() {
+	if [ $# -eq 0 ]; then
+		open .;
+	else
+		open "$@";
+	fi;
 }
 
 # `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring
