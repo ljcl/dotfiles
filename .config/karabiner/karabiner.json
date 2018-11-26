@@ -15,6 +15,52 @@
                 },
                 "rules": [
                     {
+                        "conditions": {
+                            "identifiers": [
+                                {
+                                    "description": "Logitech Reciever",
+                                    "product_id": 50475,
+                                    "vendor_id": 1133
+                                }
+                            ],
+                            "type": "device_if"
+                        },
+                        "description": "back and forward keys for browsers",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "pointing_button": "button4"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "open_bracket",
+                                        "modifiers": [
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "pointing_button": "button4",
+                                    "modifiers": {"mandatory": [
+                                            "command"
+                                        ]}
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "close_bracket",
+                                        "modifiers": [
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "manipulators": [
                             {
                                 "description": "Caps Lock -> Hyper",
@@ -75,12 +121,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "eject",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
+                                    "consumer_key_code": "eject"
                                 },
                                 "to": [
                                     {
@@ -194,6 +235,32 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": true,
+                    "simple_modifications": []
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 50475,
+                        "vendor_id": 1133
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": []
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 50475,
+                        "vendor_id": 1133
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
                     "simple_modifications": []
                 }
             ],
