@@ -43,10 +43,12 @@
                             },
                             {
                                 "from": {
-                                    "pointing_button": "button4",
-                                    "modifiers": {"mandatory": [
+                                    "modifiers": {
+                                        "mandatory": [
                                             "command"
-                                        ]}
+                                        ]
+                                    },
+                                    "pointing_button": "button4"
                                 },
                                 "to": [
                                     {
@@ -54,6 +56,37 @@
                                         "modifiers": [
                                             "command"
                                         ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "conditions": {
+                            "identifiers": [
+                                {
+                                    "description": "85M-LCD Keycool",
+                                    "product_id": 1155,
+                                    "vendor_id": 16465
+                                }
+                            ],
+                            "type": "device_if"
+                        },
+                        "description": "85m - delete => fn",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "delete_forward",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "fn"
                                     }
                                 ],
                                 "type": "basic"
@@ -101,7 +134,7 @@
                             ],
                             "type": "device_if"
                         },
-                        "description": "fn = left_control, eject = fn",
+                        "description": "Magic Keyboard fn = left_control, eject = fn",
                         "manipulators": [
                             {
                                 "from": {
@@ -260,6 +293,45 @@
                         "vendor_id": 1133
                     },
                     "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": []
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 632,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": []
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 16465,
+                        "vendor_id": 1155
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": []
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 16465,
+                        "vendor_id": 1155
+                    },
+                    "ignore": true,
                     "manipulate_caps_lock_led": false,
                     "simple_modifications": []
                 }
