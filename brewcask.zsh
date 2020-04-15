@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # Install native apps
 
 brew install caskroom/cask/brew-cask
@@ -19,16 +21,15 @@ brew cask install gpgtools
 brew cask install hammerspoon
 brew cask install iterm2
 brew cask install karabiner-elements
-brew cask install kap
 brew cask install namechanger
 brew cask install sketch
-brew cask install sourcetree
 brew cask install sublime-text
 brew cask install the-unarchiver
 brew cask install transmit
 brew cask install vlc
+brew cask install rescuetime
+brew cask install choosy
 brew cask install phoenix
-
 
 echo "Install from App Store:"
 echo "- amphetamine"

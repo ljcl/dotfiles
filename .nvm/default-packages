@@ -1,9 +1,5 @@
-create-react-app
-flow-bin
 http-server
-lerna
 nodemon
 npm-check
 npx
 prettier
-yo

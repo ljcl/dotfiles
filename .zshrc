@@ -18,15 +18,9 @@ if ! zgen saved; then
 
   # Oh My Zsh
   zgen oh-my-zsh
-  zgen oh-my-zsh plugins/git
-  zgen oh-my-zsh plugins/history
   zgen oh-my-zsh plugins/colored-man-pages
-  zgen oh-my-zsh plugins/git-extras
-  zgen oh-my-zsh plugins/tmux
-  zgen oh-my-zsh plugins/rust
 
   # Non oh-my-zsh plugins
-  zgen load zsh-users/zsh-completions src
   zgen load lukechilds/zsh-nvm
 
   # Pure Theme
