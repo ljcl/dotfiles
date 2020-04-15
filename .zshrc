@@ -1,12 +1,15 @@
 if [ -f /etc/profile ]; then
-    PATH=""
-    source /etc/profile
+  PATH=""
+  source /etc/profile
 fi
 
 for file in ~/.{path,exports,functions,aliases,extra}; do
-	[ -r "$file" ] && [ -f "$file" ] && source "$file";
-done;
-unset file;
+  [ -r "$file" ] && [ -f "$file" ] && source "$file"
+done
+unset file
+
+DISABLE_UPDATE_PROMPT=true
+DISABLE_AUTO_UPDATE=true
 
 # Zgen
 source "${HOME}/.zgen/zgen.zsh"

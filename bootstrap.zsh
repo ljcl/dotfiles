@@ -13,13 +13,8 @@ function doIt() {
   source ~/.zshrc
 }
 
-if [ "$1" == "--force" -o "$1" == "-f" ]; then
+read "confirm?This may overwrite existing files in your home directory. Are you sure?"
+if [[ $confirm =~ ^[Yy]$ ]]; then
   doIt
-else
-  read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1
-  echo ""
-  if [[ $REPLY =~ ^[Yy]$ ]]; then
-    doIt
-  fi
 fi
 unset doIt
