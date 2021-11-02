@@ -48,6 +48,10 @@ ln -sf ~/.config/zsh/inputrc ~/.inputrc
 ln -sf ~/.config/zsh/aliases.zsh ~/.aliases
 
 echo
+echo -e "\033[1m\033[34m==> Warp\033[0m"
+ln -sf ~/.config/warp ~/.warp
+
+echo
 echo -e "\033[1m\033[34m==> JS / Node\033[0m"
 git clone https://github.com/nvm-sh/nvm.git "${HOME}/.config/.nvm"
 ln -sf ~/.config/js/editorconfig ~/.editorconfig
