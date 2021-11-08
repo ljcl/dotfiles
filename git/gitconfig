@@ -1,10 +1,6 @@
-[user]
-name = Luke Clark
-username = ljcl
 [alias]
 # View abbreviated SHA, description, and history graph of the latest 20 commits
-l = log --pretty=format:'%C(auto,yellow)%h%C(auto,magenta)% G? %C(auto,blue)%ad %C(auto,green)%aN %C(auto,reset)%s%C(auto,red)% gD% D' -n 20 --abbrev-commit --date=relative
-# View the current working tree status using the short format
+l = log -n 50
 s = status -s
 # Show the diff between the latest commit and the current state
 d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
@@ -16,8 +12,6 @@ p = pull --recurse-submodules
 c = clone --recursive
 # Commit all changes
 ca = !git add -A && git commit -Sav
-# Switch to a branch, creating it if necessary
-go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 # Show verbose output about tags, branches or remotes
 tags = tag -l
 branches = branch -a --no-merged develop
@@ -46,6 +40,15 @@ fupdate = "!git remote update origin --prune"
 # List contributors with number of commits
 contributors = shortlog --summary --numbered
 whoami = config user.email
+
+[log]
+date = relative
+
+[format]
+pretty = shortlog
+
+[pretty]
+shortlog = format:%C(auto,yellow)%h%C(auto,magenta)% G? %C(auto,blue)%>(12,trunc)%ad %C(auto,green)%<(12,trunc)%aN%C(auto,reset)%s%C(auto,red)% gD% D
 
 [apply]
 # Detect whitespace errors when applying a patch
@@ -129,7 +132,9 @@ insteadOf = "gist:"
 clean = git-lfs clean -- %f
 smudge = git-lfs smudge -- %f
 required = true
+
 [pull]
 ff = only
+
 [init]
 defaultBranch = main
