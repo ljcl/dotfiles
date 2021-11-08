@@ -9,7 +9,7 @@ if [[ "$INSTALL_APPS" =~ ^(y|Y)$ ]]; then
   if [[ $(which brew) == "/usr/local/bin/brew" ]]; then
     echo "Brew installed already, skipping"
   else
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
   echo -e "\033[1m\033[34m==> Installing brew formulae\033[0m"
   brew bundle --file=~/.config/Brewfile

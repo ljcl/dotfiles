@@ -1,13 +1,13 @@
 tap "homebrew/cask-fonts"
-cask_args require_sha: true
+tap "homebrew/cask-versions"
 
 brew "coreutils"
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew "findutils"
 brew "zsh"
 brew "wget"
-brew "vim", args: ["with-override-system-vi"]
-brew "grep", args: ["with-default-names"]
+brew "vim"
+brew "grep"
 brew "git"
 # https://github.com/tj/git-extras/blob/master/Commands.md
 brew "git-extras"
@@ -30,7 +30,6 @@ cask "phoenix"
 cask "hammerspoon"
 cask "karabiner-elements"
 cask "visual-studio-code-insiders"
-cask "1password"
 cask "alfred"
 cask "appcleaner"
 cask "beamer"
