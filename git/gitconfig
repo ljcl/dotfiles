@@ -138,3 +138,7 @@ ff = only
 
 [init]
 defaultBranch = main
+
+# Include the [user[ name, email and signingkey in a separate file
+[include]
+path = ~/.gitconfig-user

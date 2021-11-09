@@ -33,6 +33,7 @@ phoenix/automatic_backups
 .zgenom
 .nvm
 gatsby
+Brewfile.lock.json
 
 #
 node_modules/

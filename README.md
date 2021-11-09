@@ -23,12 +23,18 @@ If `~/.extra` exists, it will be sourced along with the other files:
 ```shell
 GIT_AUTHOR_NAME="Luke Clark"
 GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
-git config --global user.name "$GIT_AUTHOR_NAME"
 GIT_AUTHOR_EMAIL="luke@lukeclark.com.au"
 GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
-git config --global user.email "$GIT_AUTHOR_EMAIL"
 GIT_SIGNING_KEY="GPGSIGNKEY"
-git config --global user.signingkey "$GIT_SIGNING_KEY"
+```
+
+Create a `~/.gitconfig-user` to include the [user] block of .gitconfig
+
+```shell
+[user]
+	name = Luke Clark
+	email = email@example.org
+	signingkey = KEY
 ```
 
 ### Sensible macOS defaults
