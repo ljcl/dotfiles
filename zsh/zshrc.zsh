@@ -21,7 +21,7 @@ if ! zgenom saved; then
   zgenom ohmyzsh plugins/git
   zgenom ohmyzsh plugins/sudo
 
-  [[ "$(uname -s)" = Darwin ]] && zgenom ohmyzsh plugins/osx
+  [[ "$(uname -s)" = Darwin ]] && zgenom ohmyzsh plugins/macos
 
   # zgen load /Users/clarkl8n/zsh-nvm.plugin.zsh
   # zgen load zsh-users/zsh-autosuggestions
