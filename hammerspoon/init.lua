@@ -1,42 +1,59 @@
--- DISPLAY FOCUS SWITCHING --
+hs.alert.show("Hammerspoon config loaded")
 
---One hotkey should just suffice for dual-display setups as it will naturally
---cycle through both.
---A second hotkey to reverse the direction of the focus-shift would be handy
---for setups with 3 or more displays.
+hyper = {"cmd", "alt", "ctrl"}
 
---Bring focus to next display/screen
-hs.hotkey.bind({"alt"}, "`", function ()
-  focusScreen(hs.window.focusedWindow():screen():next())
-end)
+hs.hotkey.bind(hyper, "R", hs.reload)
 
---Bring focus to previous display/screen
-hs.hotkey.bind({"alt", "shift"}, "`", function()
-  focusScreen(hs.window.focusedWindow():screen():previous())
-end)
-
---Predicate that checks if a window belongs to a screen
-function isInScreen(screen, win)
-  return win:screen() == screen
+function fuzzy(choices, func)
+  local chooser = hs.chooser.new(func)
+  chooser:choices(choices)
+  chooser:searchSubText(true)
+  chooser:bgDark(true)
+  -- chooser:fgColor({hex="#bbf"})
+  chooser:subTextColor({hex="#aaa"})
+  chooser:width(15)
+  chooser:show()
 end
 
--- Brings focus to the scren by setting focus on the front-most application in it.
--- Also move the mouse cursor to the center of the screen. This is because
--- Mission Control gestures & keyboard shortcuts are anchored, oddly, on where the
--- mouse is focused.
-function focusScreen(screen)
-  --Get windows within screen, ordered from front to back.
-  --If no windows exist, bring focus to desktop. Otherwise, set focus on
-  --front-most application window.
-  local windows = hs.fnutils.filter(
-      hs.window.orderedWindows(),
-      hs.fnutils.partial(isInScreen, screen))
-  local windowToFocus = #windows > 0 and windows[1] or hs.window.desktop()
-  windowToFocus:focus()
-
-  -- Move mouse to center of screen
-  local pt = hs.geometry.rectMidPoint(screen:fullFrame())
-  hs.mouse.setAbsolutePosition(pt)
+function selectAudio(audio)
+  if audio == nil then -- nothing selected
+    return
+  end
+  local device = hs.audiodevice.findDeviceByUID(audio.uid)
+  hs.alert.show("Setting "..audio.subText.." device: "..device:name())
+  if device:isOutputDevice() then
+    device:setDefaultOutputDevice()
+  else
+    device:setDefaultInputDevice()
+  end
 end
 
--- END DISPLAY FOCUS SWITCHING --
+function showAudioFuzzy()
+  local devices = hs.audiodevice.allDevices()
+  local choices = {}
+  local active_input = hs.audiodevice.defaultInputDevice()
+  local active_output = hs.audiodevice.defaultOutputDevice()
+  local active, subtext
+  for i=1, #devices do
+    if devices[i]:isOutputDevice() then
+      active = devices[i]:uid() == active_output:uid()
+      subtext = "output"
+    else
+      active = devices[i]:uid() == active_input:uid()
+      subtext = "input"
+    end
+    if active then
+      subtext = subtext .. " (active)"
+    end
+    choices[i] = {
+      text = devices[i]:name(),
+      uid = devices[i]:uid(),
+      subText = subtext,
+      valid = not active,
+    }
+  end
+  fuzzy(choices, selectAudio)
+end
+
+
+hs.hotkey.bind(hyper, "A", showAudioFuzzy)
