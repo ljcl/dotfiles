@@ -12,6 +12,7 @@ p = pull --recurse-submodules
 c = clone --recursive
 # Commit all changes
 ca = !git add -A && git commit -Sav
+conflicts = !git status --short | grep -E '^([AUD][AU]|[UD]D) '
 # Switch to a branch
 go = "!f() { git switch $1 2>/dev/null || git switch -c $1; }; f"
 # Show verbose output about tags, branches or remotes
