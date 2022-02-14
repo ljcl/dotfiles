@@ -25,7 +25,9 @@
 ######################
 *.log
 
-# The extra file shouldn't be commited
+# Sensitive/ Excluded files #
+#############################
+
 .extra
 rclone/rclone.conf
 configstore
@@ -34,6 +36,7 @@ phoenix/automatic_backups
 .nvm
 gatsby
 Brewfile.lock.json
+gh/
 
 #
 node_modules/
