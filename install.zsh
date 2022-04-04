@@ -46,6 +46,7 @@ ln -sf ~/.config/zsh/hushlogin ~/.hushlogin
 ln -sf ~/.config/zsh/path.zsh ~/.path
 ln -sf ~/.config/zsh/inputrc ~/.inputrc
 ln -sf ~/.config/zsh/aliases.zsh ~/.aliases
+ln -sf ~/.config/zsh/fuzzyswitch.zsh ~/.fuzzyswitch
 
 echo
 echo -e "\033[1m\033[34m==> Warp\033[0m"

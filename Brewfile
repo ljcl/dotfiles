@@ -12,6 +12,7 @@ brew "git"
 # https://github.com/tj/git-extras/blob/master/Commands.md
 brew "git-extras"
 brew "openssh"
+brew "fzf"
 brew "tldr"
 brew "mas"
 brew "ssh-copy-id"

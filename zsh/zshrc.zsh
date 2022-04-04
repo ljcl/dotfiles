@@ -1,4 +1,4 @@
-for file in ~/.{path,aliases,extra}; do
+for file in ~/.{path,aliases,extra,fuzzyswitch}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
