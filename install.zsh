@@ -47,6 +47,11 @@ ln -sf ~/.config/zsh/path.zsh ~/.path
 ln -sf ~/.config/zsh/inputrc ~/.inputrc
 ln -sf ~/.config/zsh/aliases.zsh ~/.aliases
 ln -sf ~/.config/zsh/fuzzyswitch.zsh ~/.fuzzyswitch
+ln -sf ~/.config/.asdfrc ~/.asdfrc
+
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+asdf install nodejs lts
+asdf global nodejs lts
 
 echo
 echo -e "\033[1m\033[34m==> Warp\033[0m"
@@ -54,7 +59,6 @@ ln -sf ~/.config/warp ~/.warp
 
 echo
 echo -e "\033[1m\033[34m==> JS / Node\033[0m"
-git clone https://github.com/nvm-sh/nvm.git "${HOME}/.config/.nvm"
 ln -sf ~/.config/js/editorconfig ~/.editorconfig
 
 echo

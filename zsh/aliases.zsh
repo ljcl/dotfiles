@@ -2,7 +2,7 @@
 alias c="tr -d '\n' | pbcopy"
 
 # Update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='brew update; brew upgrade; brew cleanup; omz update; zgenom selfupdate; zgenom update; zgenom reset; nvm install --lts'
+alias update='brew update; brew upgrade; brew cleanup; omz update; zgenom selfupdate; zgenom update; zgenom reset; asdf install nodejs lts'
 
 # IP addresses
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
