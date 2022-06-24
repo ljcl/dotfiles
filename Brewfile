@@ -44,8 +44,12 @@ cask "discord"
 cask "fantastical"
 cask "gitup"
 cask "insomnia"
+cask "warp"
 
 mas "Lungo", id: 1263070803
 mas "System Color Picker", id: 1545870783
 mas "Data Jar", id: 1453273600
 mas "Pins for Pinboard", id: 1547106997
+mas "Velja", id: 1607635845
+mas "Pure Paste", id: 1611378436
+mas "Reeder 5", id: 1529448980

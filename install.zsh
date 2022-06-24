@@ -1,6 +1,6 @@
 sudo -v
 
-read -q "INSTALL_APPS?Install CLI & GUI apps with Homebrew ?"
+read -q "INSTALL_APPS?Install CLI & GUI apps with Homebrew?"
 INSTALL_APPS=${INSTALL_APPS:-n}
 
 if [[ "$INSTALL_APPS" =~ ^(y|Y)$ ]]; then
@@ -10,7 +10,17 @@ if [[ "$INSTALL_APPS" =~ ^(y|Y)$ ]]; then
     echo "Brew installed already, skipping"
   else
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+    read -q "ADD_BREW_PATH?Add Homebrew to path?"
+    ADD_BREW_PATH=${ADD_BREW_PATH:-n}
+
+    if [[ "$ADD_BREW_PATH" =~ ^(y|Y)$ ]]; then
+      echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/clarkl8n/.profile
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+      echo -e "\033[1m\033[34m==> Added brew to .profile\033[0m"
+    fi
   fi
+
   echo -e "\033[1m\033[34m==> Installing brew formulae\033[0m"
   brew bundle --file=~/.config/Brewfile
 
@@ -21,7 +31,6 @@ if [[ "$INSTALL_APPS" =~ ^(y|Y)$ ]]; then
   mkdir -p ~/.vim/autoload
 
   echo "Install Separately:"
-  echo "- Warp terminal"
   echo "- Soulver 3"
 fi
 
