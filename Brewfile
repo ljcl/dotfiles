@@ -45,6 +45,8 @@ cask "fantastical"
 cask "gitup"
 cask "insomnia"
 cask "warp"
+cask "slack"
+cask "notion"
 
 mas "Lungo", id: 1263070803
 mas "System Color Picker", id: 1545870783
