@@ -1,3 +1,5 @@
+eval $(/opt/homebrew/bin/brew shellenv)
+
 for file in ~/.{path,aliases,extra,fuzzyswitch}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
@@ -33,5 +35,3 @@ fi
 
 # Starship theme
 # eval "$(starship init zsh)"
-
-eval $(/opt/homebrew/bin/brew shellenv)

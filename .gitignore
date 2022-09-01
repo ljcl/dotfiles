@@ -37,6 +37,7 @@ phoenix/automatic_backups
 gatsby
 Brewfile.lock.json
 gh/
+raycast
 
 #
 node_modules/

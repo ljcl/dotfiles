@@ -21,10 +21,10 @@ done 2>/dev/null &
 ###############################################################################
 
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "Luke"
-sudo scutil --set HostName "Luke"
-sudo scutil --set LocalHostName "Luke"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "Luke"
+# sudo scutil --set ComputerName "Luke"
+# sudo scutil --set HostName "Luke"
+# sudo scutil --set LocalHostName "Luke"
+# sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "Luke"
 
 # Scrollbars
 defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"

@@ -1,3 +1,30 @@
+function _arrayWithoutHoles(arr) {
+    if (Array.isArray(arr)) {
+        for(var i = 0, arr2 = new Array(arr.length); i < arr.length; i++){
+            arr2[i] = arr[i];
+        }
+        return arr2;
+    }
+}
+function _instanceof(left, right) {
+    if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) {
+        return right[Symbol.hasInstance](left);
+    } else {
+        return left instanceof right;
+    }
+}
+function _iterableToArray(iter) {
+    if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
+}
+function _nonIterableSpread() {
+    throw new TypeError("Invalid attempt to spread non-iterable instance");
+}
+function _toConsumableArray(arr) {
+    return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
+}
+var _typeof = function(obj) {
+    return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj;
+};
 function frameRatio(a, b) {
     var widthRatio = b.width / a.width;
     var heightRatio = b.height / a.height;
@@ -7,20 +34,6 @@ function frameRatio(a, b) {
         height = Math.round(height * heightRatio);
         x = Math.round(b.x + (x - a.x) * widthRatio);
         y = Math.round(b.y + (y - a.y) * heightRatio);
-        return {
-            width: width,
-            height: height,
-            x: x,
-            y: y
-        };
-    };
-}
-function moveToFrame(a, b) {
-    // TODO(mafredri): Try to keep window edges within b.
-    return function(param) {
-        var width = param.width, height = param.height, x = param.x, y = param.y;
-        x = b.x + x - a.x;
-        y = b.y + y - a.y;
         return {
             width: width,
             height: height,
@@ -95,15 +108,15 @@ Window.prototype.toggleMaximized = function _toggleMaximized() {
     toggleMaximized(this);
 };
 var hyper = [
-    'cmd',
-    'ctrl',
-    'alt'
+    "cmd",
+    "ctrl",
+    "alt"
 ];
 var hyperShift = [
-    'cmd',
-    'ctrl',
-    'alt',
-    'shift', 
+    "cmd",
+    "ctrl",
+    "alt",
+    "shift", 
 ];
 var handlers = new Map();
 function onKey(keys, mod, cb) {
@@ -137,6 +150,68 @@ function unbind(id) {
 function createID(key, mod) {
     return key + mod.sort().join();
 }
+function log() {
+    for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++){
+        args[_key] = arguments[_key];
+    }
+    var _Phoenix, // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+    _console;
+    args = args.map(function(arg) {
+        return stringify(arg);
+    });
+    (_Phoenix = Phoenix).log.apply(_Phoenix, _toConsumableArray(args));
+    (_console = console).trace.apply(_console, _toConsumableArray(args));
+}
+const __default = Object.assign(log, {
+    notify: function() {
+        for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++){
+            args[_key] = arguments[_key];
+        }
+        var _Phoenix, // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+        _console;
+        args = args.map(function(arg) {
+            return stringify(arg);
+        });
+        (_Phoenix = Phoenix).log.apply(_Phoenix, _toConsumableArray(args));
+        var message = args.join(" ");
+        Phoenix.notify(message);
+        (_console = console).trace.apply(_console, _toConsumableArray(args));
+    },
+    noTrace: function() {
+        for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++){
+            args[_key] = arguments[_key];
+        }
+        var _Phoenix, // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+        _console;
+        args = args.map(function(arg) {
+            return stringify(arg);
+        });
+        (_Phoenix = Phoenix).log.apply(_Phoenix, _toConsumableArray(args));
+        (_console = console).log.apply(_console, _toConsumableArray(args));
+    }
+});
+function stringify(value) {
+    if (_instanceof(value, Error)) {
+        var stack = "";
+        if (value.stack) {
+            var s = value.stack.trim().split("\n");
+            s[0] += " (:".concat(value.line, ":").concat(value.column, ")");
+            var indented = s.map(function(line) {
+                return "\t at " + line;
+            }).join("\n");
+            stack = "\n".concat(indented);
+        }
+        return "\n".concat(value.toString()).concat(stack);
+    }
+    switch(typeof value === "undefined" ? "undefined" : _typeof(value)){
+        case "object":
+            return "\n" + JSON.stringify(value, null, 2);
+        case "function":
+            return value.toString();
+        default:
+            return value;
+    }
+}
 function titleModal(text, param, icon) {
     var duration = param === void 0 ? 1 : param;
     var m = new Modal();
@@ -152,7 +227,7 @@ Modal.prototype.showCenterOn = function _showCenterOn(screen) {
     showAt(this, screen, 2, 2);
 };
 function showAt(modal, screen, widthDiv, heightDiv) {
-    var ref = modal.frame(), height = ref.height, width = ref.width, x = ref.x, y = ref.y;
+    var ref = modal.frame(), height = ref.height, width = ref.width;
     var sf = screen.visibleFrame();
     modal.origin = {
         x: sf.x + (sf.width / widthDiv - width / 2),
@@ -256,7 +331,11 @@ var loopFrames = function(visibleFrame, namedFrames, win) {
     });
     return frame;
 };
-onKey("z", hyper, function() {
+/**
+ * Tile the window in the given frame,
+ * tile it horizontally or vertically depending
+ * on what makes the most sense
+ */ onKey("z", hyper, function() {
     var win = Window.focused();
     if (!win) return;
     var visibleFrame = win.screen().flippedVisibleFrame();
@@ -270,7 +349,9 @@ onKey("z", hyper, function() {
     win.setFrame(frame);
     win.clearUnmaximized();
 });
-onKey("z", hyperShift, function() {
+/**
+ * Tile the window with a larger portion
+ */ onKey("z", hyperShift, function() {
     var win = Window.focused();
     if (!win) return;
     var visibleFrame = win.screen().flippedVisibleFrame();
@@ -281,7 +362,9 @@ onKey("z", hyperShift, function() {
     win.setFrame(frame);
     win.clearUnmaximized();
 });
-onKey("tab", hyper, function() {
+/**
+ * Move the window to the next screen
+ */ onKey("tab", hyper, function() {
     var win = Window.focused();
     if (!win) return;
     var oldScreen = win.screen();
@@ -290,29 +373,29 @@ onKey("tab", hyper, function() {
     var ratio = frameRatio(oldScreen.flippedVisibleFrame(), newScreen.flippedVisibleFrame());
     win.setFrame(ratio(win.frame()));
 });
-onKey("tab", hyperShift, function() {
-    var win = Window.focused();
-    if (!win) return;
-    var oldScreen = win.screen();
-    var newScreen = oldScreen.next();
-    if (oldScreen.isEqual(newScreen)) return;
-    var move = moveToFrame(oldScreen.flippedVisibleFrame(), newScreen.flippedVisibleFrame());
-    win.setFrame(move(win.frame()));
-});
-onKey("c", hyper, function() {
+/**
+ * Toggle maximized state of window
+ */ onKey("c", hyper, function() {
     var win = Window.focused();
     if (win) win.toggleMaximized();
 });
-onKey("c", hyperShift, function() {
+/**
+ * Center the window on the screen if it's not fullscreen,
+ * otherwise, resize it to 60% of the screen size and center it.
+ */ onKey("c", hyperShift, function() {
     var win = Window.focused();
     if (!win) return;
-    var ref = win.frame(), width = ref.width, height = ref.height;
-    var ref1 = win.screen().flippedVisibleFrame(), sWidth = ref1.width, sHeight = ref1.height, x = ref1.x, y = ref1.y;
+    var ref = win.frame(), windowWidth = ref.width, windowHeight = ref.height;
+    var ref1 = win.screen().flippedVisibleFrame(), screenWidth = ref1.width, screenHeight = ref1.height, x = ref1.x, y = ref1.y;
+    var newWindowWidth = windowWidth !== screenWidth ? windowWidth : screenWidth * 0.6;
+    var newWindowHeight = windowHeight !== screenHeight ? windowHeight : screenHeight * 0.6;
+    __default(screenWidth);
+    __default("windowWith", windowWidth);
     win.setFrame({
-        height: height,
-        width: width,
-        x: x + sWidth / 2 - width / 2,
-        y: y + sHeight / 2 - height / 2
+        height: newWindowHeight,
+        width: newWindowWidth,
+        x: x + screenWidth / 2 - newWindowWidth / 2,
+        y: y + screenHeight / 2 - newWindowHeight / 2
     });
 });
 function isRectEqual(a, b) {

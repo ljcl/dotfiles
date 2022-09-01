@@ -113,6 +113,7 @@ log = true
 [push]
 default = simple
 followTags = true
+autoSetupRemote = true
 
 # URL shorthands
 [url "git@github.com:"]
