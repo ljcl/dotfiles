@@ -33,5 +33,4 @@ if ! zgenom saved; then
   zgenom save
 fi
 
-# Starship theme
-# eval "$(starship init zsh)"
+[[ "$TERM_PROGRAM" = "vscode" ]] && eval "$(starship init zsh)"

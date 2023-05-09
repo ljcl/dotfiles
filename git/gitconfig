@@ -37,7 +37,7 @@ fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen 
 # Find commits by commit message
 fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
 # Remove branches that have already been merged with master
-cleanup = "!git branch --merged | grep  -v 'master\\|release\\|develop' | xargs -n 1 git branch -d"
+cleanup = "!git branch --merged | grep  -v 'master\\|release\\|develop\\|main' | xargs -n 1 git branch -d"
 # Fetch & then update remotes
 fupdate = "!git remote update origin --prune"
 # List contributors with number of commits
