@@ -20,6 +20,7 @@ brew "tldr"
 brew "mas"
 brew "ssh-copy-id"
 brew "vale"
+brew "awscli"
 
 # Quick Look plugins
 cask "qlcolorcode"
