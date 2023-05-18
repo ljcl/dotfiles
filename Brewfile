@@ -11,6 +11,7 @@ brew "grep"
 brew "git"
 brew "asdf"
 brew "gpg"
+brew "gh"
 brew "gawk"
 # https://github.com/tj/git-extras/blob/master/Commands.md
 brew "git-extras"
