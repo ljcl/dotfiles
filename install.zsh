@@ -15,7 +15,7 @@ if [[ "$INSTALL_APPS" =~ ^(y|Y)$ ]]; then
     ADD_BREW_PATH=${ADD_BREW_PATH:-n}
 
     if [[ "$ADD_BREW_PATH" =~ ^(y|Y)$ ]]; then
-      echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/clarkl8n/.profile
+      echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>/Users/clarkl8n/.profile
       eval "$(/opt/homebrew/bin/brew shellenv)"
       echo -e "\033[1m\033[34m==> Added brew to .profile\033[0m"
     fi
@@ -23,6 +23,9 @@ if [[ "$INSTALL_APPS" =~ ^(y|Y)$ ]]; then
 
   echo -e "\033[1m\033[34m==> Installing brew formulae\033[0m"
   brew bundle --file=~/.config/Brewfile
+
+  # Remove quarantine attributes for QL plugins
+  xattr -d -r com.apple.quarantine ~/Library/QuickLook
 
   ## Write some empty directories for VIM
   mkdir -p ~/.vim/backups

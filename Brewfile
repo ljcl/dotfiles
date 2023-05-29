@@ -24,6 +24,9 @@ brew "vale"
 brew "awscli"
 
 # Quick Look plugins
+cask "qlcolorcode"
+cask "qlstephen"
+cask "quicklook-json"
 cask "qlmarkdown"
 
 cask "font-fira-code"
