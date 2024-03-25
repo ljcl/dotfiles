@@ -33,7 +33,6 @@ cask "font-fira-code"
 
 cask "little-snitch"
 cask "microsoft-edge"
-cask "phoenix"
 cask "hammerspoon"
 cask "karabiner-elements"
 cask "visual-studio-code-insiders"
@@ -47,7 +46,7 @@ cask "dash"
 cask "discord"
 cask "fantastical"
 cask "gitup"
-cask "insomnia"
+cask "bruno"
 cask "warp"
 cask "slack"
 cask "notion"
@@ -61,3 +60,5 @@ mas "Pins for Pinboard", id: 1547106997
 mas "Velja", id: 1607635845
 mas "Pure Paste", id: 1611378436
 mas "Reeder 5", id: 1529448980
+mas "HEIC Converter", id: 1294126402
+mas "FoodNoms Nutrition Tracker", id: 1479461686

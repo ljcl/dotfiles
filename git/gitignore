@@ -21,15 +21,15 @@
 *.tar
 *.zip
 
-# Logs and databases #
+# Logs, databases and backups #
 ######################
 *.log
+karabiner/automatic_backups/
 
 # The extra file shouldn't be commited
 .extra
 rclone/rclone.conf
 configstore
-phoenix/automatic_backups
 
 #
 node_modules/

@@ -31,13 +31,13 @@
 .extra
 rclone/rclone.conf
 configstore
-phoenix/automatic_backups
 .zgenom
 .nvm
 gatsby
 Brewfile.lock.json
 gh/
 raycast
+op
 
 #
 node_modules/

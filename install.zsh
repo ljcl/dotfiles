@@ -59,7 +59,10 @@ ln -sf ~/.config/zsh/path.zsh ~/.path
 ln -sf ~/.config/zsh/inputrc ~/.inputrc
 ln -sf ~/.config/zsh/aliases.zsh ~/.aliases
 ln -sf ~/.config/zsh/fuzzyswitch.zsh ~/.fuzzyswitch
+
+# ASDF
 ln -sf ~/.config/.asdfrc ~/.asdfrc
+ln -sf ~/.config/.tool-versions ~/.tool-versions
 
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf install nodejs lts
@@ -72,10 +75,6 @@ ln -sf ~/.config/warp ~/.warp
 echo
 echo -e "\033[1m\033[34m==> JS / Node\033[0m"
 ln -sf ~/.config/js/editorconfig ~/.editorconfig
-
-echo
-echo -e "\033[1m\033[34m==> Tmux\033[0m"
-ln -sf ~/.config/tmux/tmux.conf ~/.tmux.conf
 
 echo
 echo -e "\033[1m\033[34m==> Mac Settings\033[0m"

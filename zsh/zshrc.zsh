@@ -33,9 +33,6 @@ if ! zgenom saved; then
   zgenom save
 fi
 
-# Starship theme
-# eval "$(starship init zsh)"
-
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
