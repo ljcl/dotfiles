@@ -1,5 +1,11 @@
 eval $(/opt/homebrew/bin/brew shellenv)
 
+if [[ "$TERM_PROGRAM" != "WarpTerminal" ]]; then
+  PS1='[%2d] '
+fi
+
+[[ "$TERM_PROGRAM" == "vscode" ]] && . "/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-rc.zsh"
+
 for file in ~/.{path,aliases,extra,fuzzyswitch}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
