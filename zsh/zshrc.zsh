@@ -4,7 +4,7 @@ if [[ "$TERM_PROGRAM" != "WarpTerminal" ]]; then
   PS1='[%2d] '
 fi
 
-[[ "$TERM_PROGRAM" == "vscode" ]] && . "/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-rc.zsh"
+[[ "$TERM_PROGRAM" == "vscode" ]] && . "/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-rc.zsh"
 
 for file in ~/.{path,aliases,extra,fuzzyswitch}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file"
@@ -32,9 +32,9 @@ if ! zgenom saved; then
 
   [[ "$(uname -s)" = Darwin ]] && zgenom ohmyzsh plugins/macos
 
-  # zgen load zsh-users/zsh-autosuggestions
-  # zgen load zsh-users/zsh-syntax-highlighting
-  # zgen load zsh-users/zsh-history-substring-search
+  zgen load zsh-users/zsh-autosuggestions
+  zgen load zsh-users/zsh-syntax-highlighting
+  zgen load zsh-users/zsh-history-substring-search
 
   zgenom save
 fi

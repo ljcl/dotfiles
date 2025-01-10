@@ -55,6 +55,11 @@ alias ls="command ls ${colorflag}"
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
+# Toggle Handoff
+alias handoff="defaults -currentHost write com.apple.coreservices.useractivityd ActivityAdvertisingAllowed -bool no; defaults -currentHost write com.apple.coreservices.useractivityd ActivityReceivingAllowed -bool no"
+alias handon="defaults -currentHost write com.apple.coreservices.useractivityd ActivityAdvertisingAllowed -bool yes; defaults -currentHost write com.apple.coreservices.useractivityd ActivityReceivingAllowed -bool yes"
+alias ho="handoff; handon"
+
 # Always enable colored `grep` output
 # Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
 alias grep='grep --color=auto'

@@ -51,7 +51,7 @@ date = relative
 pretty = shortlog
 
 [pretty]
-shortlog = format:%C(auto,yellow)%h%C(auto,magenta)% G? %C(auto,blue)%>(12,trunc)%ad %C(auto,green)%<(12,trunc)%aN%C(auto,reset)%s%C(auto,red)% gD% D
+shortlog = "format:%C(auto,yellow)%h%C(auto,magenta)% G? %C(auto,blue)%>(12,trunc)%ad %C(auto,green)%<(12,trunc)%aN%C(auto,reset)%s%C(auto,red)% gD% D"
 
 [apply]
 # Detect whitespace errors when applying a patch

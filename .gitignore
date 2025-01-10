@@ -38,6 +38,8 @@ Brewfile.lock.json
 gh/
 raycast
 op
+*.mdb
+zed/conversations
 
 #
 node_modules/
