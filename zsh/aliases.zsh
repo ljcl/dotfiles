@@ -11,7 +11,7 @@ alias ip="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0
 alias ips="myip && ip"
 
 # Flush Directory Service cache
-alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder && echo flushed"
+alias flush="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder && echo flushed"
 
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
