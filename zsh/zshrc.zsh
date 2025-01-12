@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 eval $(/opt/homebrew/bin/brew shellenv)
 
 if [[ "$TERM_PROGRAM" != "WarpTerminal" ]]; then
@@ -25,16 +32,15 @@ ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=10
 if ! zgenom saved; then
 
   zgenom ohmyzsh
-  zgenom ohmyzsh plugins/asdf
   zgenom ohmyzsh plugins/colored-man-pages
-  zgenom ohmyzsh plugins/git
   zgenom ohmyzsh plugins/sudo
 
   [[ "$(uname -s)" = Darwin ]] && zgenom ohmyzsh plugins/macos
 
-  zgen load zsh-users/zsh-autosuggestions
-  zgen load zsh-users/zsh-syntax-highlighting
-  zgen load zsh-users/zsh-history-substring-search
+  zgenom load romkatv/powerlevel10k powerlevel10k
+  zgenom load zsh-users/zsh-autosuggestions
+  zgenom load zsh-users/zsh-syntax-highlighting
+  zgenom load zsh-users/zsh-history-substring-search
 
   zgenom save
 fi
@@ -47,6 +53,5 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-autoload -U promptinit
-promptinit
-prompt pure
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

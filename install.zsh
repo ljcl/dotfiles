@@ -54,6 +54,7 @@ echo -e "\033[1m\033[34m==> ZSH\033[0m"
 git clone https://github.com/jandamm/zgenom.git "${HOME}/.config/.zgenom"
 
 ln -sf ~/.config/zsh/zshrc.zsh ~/.zshrc
+ln -sf ~/.config/zsh/p10k.zsh ~/.p10k.zsh
 ln -sf ~/.config/zsh/hushlogin ~/.hushlogin
 ln -sf ~/.config/zsh/path.zsh ~/.path
 ln -sf ~/.config/zsh/inputrc ~/.inputrc
