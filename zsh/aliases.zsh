@@ -1,8 +1,10 @@
 # Trim new lines and copy to clipboard
 alias c="tr -d '\n' | pbcopy"
 
+alias updatecask='brew upgrade --cask notion slack; brew outdated --cask --greedy'
+
 # Update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='brew update; brew upgrade; brew cleanup; omz update; zgenom selfupdate; zgenom update; zgenom reset; asdf install nodejs lts'
+alias update='brew update; brew upgrade; brew cleanup; omz update; zgenom selfupdate; zgenom update; zgenom reset; asdf install nodejs lts; updatecask'
 
 # IP addresses
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"

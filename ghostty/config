@@ -1,3 +1,12 @@
 font-family = "Geist Mono"
-font-size = 18
+font-size = 16
 theme = vesper
+window-padding-y = 10
+window-padding-x = 10
+window-padding-balance = true
+macos-option-as-alt = true
+macos-icon = custom-style
+macos-icon-frame = plastic
+macos-icon-ghost-color = white
+macos-icon-screen-color = black
+bold-is-bright = true
