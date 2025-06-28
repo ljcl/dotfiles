@@ -1,0 +1,7 @@
+name: Zod Docs
+version: 0.0.2
+schema: v1
+
+docs:
+  - name: Zod
+    startUrl: https://zod.dev/

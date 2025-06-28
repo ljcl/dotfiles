@@ -1,0 +1,11 @@
+name: Voyage AI rerank-2
+version: 1.0.1
+schema: v1
+
+models:
+  - name: Voyage AI rerank-2
+    provider: voyage
+    model: rerank-2
+    apiKey: ${{ secrets.CONTINUE_VOYAGE_API_KEY }}
+    roles:
+      - rerank

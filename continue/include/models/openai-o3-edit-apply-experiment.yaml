@@ -1,0 +1,17 @@
+name: o3-edit-apply
+version: 1.0.3
+schema: v1
+models:
+  - name: o3-edit-apply
+    provider: openai
+    model: o3
+    apiKey: ${{ secrets.CONTINUE_OPENAI_API_KEY }}
+    roles:
+      - chat
+      - edit
+      - apply
+    defaultCompletionOptions:
+      contextLength: 200000
+      maxTokens: 100000
+    capabilities:
+      - image_input

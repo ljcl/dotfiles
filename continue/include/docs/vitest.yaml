@@ -1,0 +1,6 @@
+name: Vitest Documentation
+version: 0.0.1
+schema: v1
+docs:
+  - name: Vitest Documentation
+    startUrl: https://vitest.dev/

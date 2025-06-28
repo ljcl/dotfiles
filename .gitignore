@@ -28,6 +28,7 @@
 # Sensitive/ Excluded files #
 #############################
 
+.env
 .extra
 rclone/rclone.conf
 configstore
@@ -40,6 +41,12 @@ raycast
 op
 *.mdb
 zed/conversations
+continue/.migrations
+continue/.utils
+continue/dev_data
+continue/index
+continue/sessions
+continue/types
 
 #
 node_modules/

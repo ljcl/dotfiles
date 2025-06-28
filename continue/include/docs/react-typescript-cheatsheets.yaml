@@ -1,0 +1,8 @@
+name: React TypeScript Cheatsheets
+version: 0.0.2
+schema: v1
+
+docs:
+  - name: React TypeScript Cheatsheets
+    startUrl: https://react-typescript-cheatsheet.netlify.app
+    rootUrl: https://react-typescript-cheatsheet.netlify.app/docs/basic/setup

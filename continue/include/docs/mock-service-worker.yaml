@@ -1,0 +1,9 @@
+name: Mock Service Worker Docs
+version: 0.0.2
+schema: v1
+
+docs:
+  - name: "Mock Service Worker"
+    startUrl: "https://mswjs.io/docs/"
+    rootUrl: "https://mswjs.io/"
+    faviconUrl: https://mswjs.io/icon.png

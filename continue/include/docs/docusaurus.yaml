@@ -1,0 +1,7 @@
+name: Docusaurus Documentation
+version: 0.0.1
+schema: v1
+docs:
+  - name: Docusaurus Documentation
+    startUrl: https://docusaurus.io/
+    rootUrl: https://docusaurus.io/docs

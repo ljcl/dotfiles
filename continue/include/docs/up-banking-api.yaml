@@ -1,0 +1,8 @@
+name: Up Banking API Docs
+version: 0.0.4
+schema: v1
+docs:
+  - name: Up Banking API
+    startUrl: https://developer.up.com.au
+    rootUrl: https://developer.up.com.au
+    faviconUrl: https://up.com.au/favicon.ico

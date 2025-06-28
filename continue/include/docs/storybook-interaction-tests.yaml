@@ -1,0 +1,6 @@
+name: Storybook Interaction Tests
+version: 0.0.1
+schema: v1
+docs:
+  - name: Storybook Interaction Tests
+    startUrl: https://storybook.js.org/docs/writing-tests/interaction-testing

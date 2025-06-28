@@ -1,0 +1,7 @@
+name: shadcn/ui Docs
+version: 0.0.1
+schema: v1
+
+docs:
+  - name: shadcn/ui
+    startUrl: https://ui.shadcn.com/docs

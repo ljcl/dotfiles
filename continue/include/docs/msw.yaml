@@ -1,0 +1,7 @@
+name: Mock Service Worker (MSW) Documentation
+version: 0.0.1
+schema: v1
+docs:
+  - name: Mock Service Worker (MSW) Documentation
+    startUrl: https://mswjs.io/
+    rootUrl: https://mswjs.io/docs

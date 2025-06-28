@@ -1,0 +1,40 @@
+name: Next.js Caching Review
+version: 0.0.4
+schema: v1
+prompts:
+  - name: Next.js Caching Review
+    description: Understand the caching behavior of your code
+    prompt: >-
+      Your task is to analyze the user's code to help them understand it's
+      current caching behavior, and mention any potential issues.
+
+      Be concise, only mentioning what is necessary.
+
+      Use the following as a starting point for your review:
+
+
+      1. Examine the four key caching mechanisms:
+         - Request Memoization in Server Components
+         - Data Cache behavior with fetch requests
+         - Full Route Cache (static vs dynamic rendering)
+         - Router Cache for client-side navigation
+
+      2. Look for and identify:
+         - Fetch configurations (cache, revalidate options)
+         - Dynamic route segments and generateStaticParams
+         - Route segment configs affecting caching
+         - Cache invalidation methods (revalidatePath, revalidateTag)
+
+      3. Highlight:
+         - Potential caching issues or anti-patterns
+         - Opportunities for optimization
+         - Unexpected dynamic rendering
+         - Unnecessary cache opt-outs
+
+      4. Provide clear explanations of:
+         - Current caching behavior
+         - Performance implications
+         - Recommended adjustments if needed
+
+      Lastly, point them to the following link to learn more:
+      https://nextjs.org/docs/app/building-your-application/caching

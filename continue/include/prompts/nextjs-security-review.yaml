@@ -1,0 +1,58 @@
+name: Next.js Security Review
+version: 0.0.2
+schema: v1
+prompts:
+  - name: Next.js Security Review
+    description: Check for any potential security vulnerabilities in your code
+    prompt: >-
+      Please review my Next.js code with a focus on security issues.
+
+
+      Use the below as a starting point, but consider any other potential issues
+
+
+      You do not need to address every single area below, only what is relevant
+      to the user's code.
+
+
+      1. Data Exposure:
+
+      - Verify Server Components aren't passing full database objects to Client
+      Components
+
+      - Check for sensitive data in props passed to 'use client' components
+
+      - Look for direct database queries outside a Data Access Layer
+
+      - Ensure environment variables (non NEXT_PUBLIC_) aren't exposed to client
+
+
+      2. Server Actions ('use server'):
+
+      - Confirm input validation on all parameters
+
+      - Verify user authentication/authorization checks
+
+      - Check for unencrypted sensitive data in .bind() calls
+
+
+      3. Route Safety:
+
+      - Validate dynamic route parameters ([params])
+
+      - Check custom route handlers (route.ts) for proper CSRF protection
+
+      - Review middleware.ts for security bypass possibilities
+
+
+      4. Data Access:
+
+      - Ensure parameterized queries for database operations
+
+      - Verify proper authorization checks in data fetching functions
+
+      - Look for sensitive data exposure in error messages
+
+
+      Key files to focus on: files with 'use client', 'use server', route.ts,
+      middleware.ts, and data access functions.

@@ -1,0 +1,26 @@
+name: Base
+version: 1.0.6
+schema: v1
+context:
+  - provider: code
+  - provider: docs
+  - provider: diff
+  - provider: terminal
+  - provider: problems
+  - provider: folder
+  - provider: codebase
+  - provider: currentFile
+  - provider: open
+models:
+  - uses: ../include/models/codestral.yaml
+  - uses: ../include/models/google-gemini-2.5-pro.yaml
+  - uses: ../include/models/google-gemini-2.5-flash.yaml
+  - uses: ../include/models/google-gemini-2.5-flash-lite.yaml
+  - uses: ../include/models/openai-gpt-4.1.yaml
+  - uses: ../include/models/openai-gpt-4.1-mini.yaml
+  - uses: ../include/models/openai-gpt-4.1-nano.yaml
+  - uses: ../include/models/openai-o3.yaml
+  - uses: ../include/models/openai-o3-edit-apply-experiment.yaml
+  - uses: ../include/models/voyage-rerank-2.yaml
+prompts:
+  - uses: ../include/prompts/write-good.yaml

@@ -1,0 +1,6 @@
+name: Radix UI
+version: 0.0.1
+schema: v1
+docs:
+  - name: Radix UI
+    startUrl: https://www.radix-ui.com/docs/primitives/overview/introduction

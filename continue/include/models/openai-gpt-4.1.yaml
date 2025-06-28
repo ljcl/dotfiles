@@ -1,0 +1,17 @@
+name: openai/gpt-4.1
+version: 1.0.1
+schema: v1
+
+models:
+  - name: GPT 4.1
+    provider: openai
+    model: gpt-4.1
+    apiKey: ${{ secrets.CONTINUE_OPENAI_API_KEY }}
+    roles:
+      - chat
+      - edit
+      - apply
+    defaultCompletionOptions:
+      contextLength: 1047576
+      maxTokens: 32768
+    useLegacyCompletionsEndpoint: false

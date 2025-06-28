@@ -32,9 +32,6 @@ if [[ "$INSTALL_APPS" =~ ^(y|Y)$ ]]; then
   mkdir -p ~/.vim/swaps
   mkdir -p ~/.vim/undo
   mkdir -p ~/.vim/autoload
-
-  echo "Install Separately:"
-  echo "- Soulver 3"
 fi
 
 ## Set Config Directory for Hammerspoon
@@ -70,8 +67,8 @@ asdf install nodejs lts
 asdf global nodejs lts
 
 echo
-echo -e "\033[1m\033[34m==> Warp\033[0m"
-ln -sf ~/.config/warp ~/.warp
+echo -e "\033[1m\033[34m==> Continue\033[0m"
+ln -sf ~/.config/continue ~/.continue
 
 echo
 echo -e "\033[1m\033[34m==> JS / Node\033[0m"

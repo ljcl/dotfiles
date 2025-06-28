@@ -1,0 +1,42 @@
+name: Next.js Optimizations Review
+version: 0.0.2
+schema: v1
+prompts:
+  - name: Next.js Optimizations Review
+    description: Check for any potential optimizations that are missing in your code
+    prompt: >-
+      Please review my Next.js code with a focus on optimization areas.
+
+
+      Use the below as a starting point, but consider any other potential areas
+      for improvement.
+
+
+      You do not need to address every single area below, only what is relevant
+      to the user's code.
+
+
+      1. Images: Check for proper usage of next/image, responsive sizing,
+      priority loading for LCP, and correct image formats.
+
+
+      2. Font Loading: Verify next/font implementation, font subsetting, and
+      proper loading strategies.
+
+
+      3. Component Loading: Identify opportunities for lazy loading using
+      next/dynamic, especially for client components and heavy libraries.
+
+
+      4. Metadata: Ensure proper metadata implementation for SEO using either
+      config-based or file-based approaches.
+
+
+      5. Performance: Look for:
+         - Layout shift issues
+         - Proper static/dynamic component usage
+         - Bundle size optimization opportunities
+         - Correct usage of loading states
+
+      Please point out any issues and suggest specific optimizations based on
+      Next.js best practices.

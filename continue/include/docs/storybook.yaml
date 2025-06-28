@@ -1,0 +1,6 @@
+name: Storybook Documentation
+version: 0.0.1
+schema: v1
+docs:
+  - name: Storybook Documentation
+    startUrl: https://storybook.js.org/
